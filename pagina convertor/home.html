@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Conversão</title>
+</head>
+<body>
+    <p id="res"></p>
+    
+    <script src="./index.js"></script>
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        window.onload = function() {
+            const medida = getQueryParam('medida');
+            const elementoResultado = document.getElementById('res');
+
+            if (medida === 'cm') {
+                elementoResultado.textContent = 'M = cm ÷ 100 \n Para converter centímetros para metros, use a fórmula: m = cm ÷ 100 Exemplo de Conversão Se você tem 250 centímetros e deseja converter para metros: m = 250 cm ÷ 100 = 2,5 m';
+            } else if (medida === 'm') {
+                elementoResultado.textContent = 'Km = m / 1000 \n As fórmulas para conversão estão representadas abaixo: Fórmula de Metros para Quilômetro km = m / 1000 Exemplo: 30 metros em quilômetros: km = m / 1000 km = 30 / 1000 km = 0,03';
+            } else if (medida === 'km') {
+                elementoResultado.textContent = 'Para converter quilômetros em milhas, você pode usar as seguintes fórmulas12345: Multiplicar o número de quilômetros por 0,6214. Dividir o número de quilômetros por 1,609344. Alternativamente, multiplicar o valor em quilômetros por 0,6 ou multiplicar por 2 e dividir por 3.';
+            } else if (medida === 'mil') {
+                elementoResultado.textContent = '5280 pés \n Converter milhas em pés Quantos milhas tiene un pé 1 mi tem 5280 pés. Para calcular quantos milhas é um número de pés pode multiplicar esse número por 5280. Por exemplo, 25 milhas seria 25 x 5280 = 132000 pés';
+            } else {
+                elementoResultado.textContent = 'Selecione uma unidade válida.';
+            }
+        };
+    </script>
+</body>
+</html>
